@@ -1,0 +1,41 @@
+<h3>Questions</h3>
+<hr>
+<h4 [routerLink]="['/questionBank',id,'question']"> + Create new question </h4>
+
+<!-- show this div when 'qb' is available -->
+<div *ngIf="qb!==undefined">
+    
+    <!-- table.table>tr*9>td*2 -->
+    <table class="table table-bordered table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Sr no</th>
+                <th>Question</th>
+                <th>A</th>
+                <th>B</th>
+                <th>C</th>
+                <th>D</th>
+                <th>answer</th>
+                <th>Edit</th>
+                <!-- <th>Delete</th> -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let qb_ of qb; index as i">
+                <td >{{qb_.id}}</td>
+                <td>{{qb_.questionText}}</td>
+                <td>{{qb_.optionA}}</td>
+                <td>{{qb_.optionB}}</td>
+                <td>{{qb_.optionC}}</td>
+                <td>{{qb_.optionD}}</td>
+                <td>{{qb_.answer}}</td>
+                <td [routerLink]="['/question',qb_.id]">Edit</td>
+                <!-- <td><button [click]='deleteQuestion(qb_.id)'>Delete</button></td> -->
+            </tr>
+        </tbody>
+    
+    </table>
+
+</div>
+
+<span class="app-clickable" routerLink="/view-all" >Back</span>

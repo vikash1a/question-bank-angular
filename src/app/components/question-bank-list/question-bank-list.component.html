@@ -1,0 +1,23 @@
+<h4 routerLink="/questionBank" > + Create new questionBank</h4>
+
+<table class="table table-bordered table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Sr no</th>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let qb of questionBank; index as i">
+            <td >{{(pageNum-1) *10+i+1}}</td>
+            <td [routerLink]="['/questionBank',qb.id]">{{qb.name}}</td>
+        </tr>
+    </tbody>
+
+</table>
+<p>Page number - {{pageNum}}   Total Number of questionBank - {{totalQuestionBank}}</p>
+<p>Total Number of page - {{lastPage}}</p>
+<button class="btn btn-primary" (click)="gotoPage()">First</button>
+<button class="btn btn-primary" (click)="gotoPage('prev')">Prev</button>
+<button class="btn btn-primary" (click)="gotoPage('next')">Next</button>
+<button class="btn btn-primary" (click)="gotoPage('last')">Last</button>

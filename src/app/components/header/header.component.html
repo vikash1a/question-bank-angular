@@ -1,0 +1,14 @@
+<div class="alert alert-primary">
+    <div class="container">
+        <h1>App Dashbord</h1>
+    </div>
+</div>
+<div class="container">
+    <button routerLink="/home" class="btn btn-link">Home</button>
+    <button routerLink="/view-all" class="btn btn-link">View all</button>
+    <!-- <button routerLink="/add-new" class="btn btn-link">Add new</button>
+    <button routerLink="/pipes-demo" class="btn btn-link">Pipe demo</button> -->
+    <button *ngIf="!authservice.isUserLoggedIn" routerLink="/login" class="btn btn-link">Login</button>
+    <button *ngIf="!authservice.isUserLoggedIn" routerLink="/signup" class="btn btn-link">Sign Up</button> 
+    <button *ngIf="authservice.isUserLoggedIn" (click)="Logout()" class="btn btn-link">Logout</button> 
+</div>

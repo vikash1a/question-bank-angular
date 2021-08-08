@@ -1,0 +1,55 @@
+<h3> Add new question</h3>
+<hr>
+
+<!-- frm is a reference to the entire form -->
+<form #frm="ngForm">
+    <div class="row">
+
+        <div class="col">
+
+            <div class="form-group">
+                <label for="questionText">questionText</label>
+                <input id="questionText" type="text" name="questionText"[(ngModel)]="question.questionText" 
+                class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="answer">answer</label>
+                <input id="answer" type="text" name="answer"[(ngModel)]="question.answer" 
+                class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="optionA">optionA</label>
+                <input id="optionA" type="text" name="optionA"[(ngModel)]="question.optionA" 
+                class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="optionB">optionB</label>
+                <input id="optionB" type="text" name="optionB"[(ngModel)]="question.optionB" 
+                class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="optionC">optionC</label>
+                <input id="optionC" type="text" name="optionC"[(ngModel)]="question.optionC" 
+                class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="optionD">optionD</label>
+                <input id="optionD" type="text" name="optionD"[(ngModel)]="question.optionD" 
+                class="form-control">
+            </div>
+
+
+            
+            <div class="form-group">
+                <label>&nbsp;</label>
+                <div>
+                    <button class="btn btn-primary" 
+                        (click)="save()">Submit</button>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+</form>

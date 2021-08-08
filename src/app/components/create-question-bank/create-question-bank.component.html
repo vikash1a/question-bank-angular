@@ -1,0 +1,29 @@
+<h3>Add new questionBank</h3>
+<hr>
+
+<!-- frm is a reference to the entire form -->
+<form #frm="ngForm">
+    <div class="row">
+
+        <div class="col">
+
+            <div class="form-group">
+                <label for="questionBankName">Name</label>
+                <input id="questionBankName" #compName="ngModel" name="questionBankName" type="text" [(ngModel)]="questionBank.name"
+                    required minlength="5" maxlength="40" class="form-control">
+            </div>
+
+            
+            <div class="form-group">
+                <label>&nbsp;</label>
+                <div>
+                    <button class="btn btn-primary" 
+                        (click)="save()">Submit</button>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+</form>
